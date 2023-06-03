@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: RO-Crates
   description: An API to perform CRUD operations on RO Crates (https://www.researchobject.org/ro-crate)
-  termsOfService: http://swagger.io/terms/
+  termsOfService: https://swagger.io/terms/
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -64,7 +64,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Crate'
+                $ref: '#/components/schemas/RoCrate'
         default:
           description: unexpected error
           content:
@@ -89,7 +89,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Crate'
+                $ref: '#/components/schemas/RoCrate'
         default:
           description: unexpected error
           content:
@@ -118,9 +118,9 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Crate:
+    RoCrate:
       allOf:
-        - $ref: '#/components/schemas/NewCrate'
+        - $ref: '#/components/schemas/NewRoCrate'
         - type: object
           required:
             - id
@@ -129,7 +129,7 @@ components:
               type: integer
               format: int64
 
-    NewCrate:
+    NewRoCrate:
       type: object
       required:
         - name
